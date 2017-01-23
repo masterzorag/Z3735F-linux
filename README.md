@@ -9,10 +9,14 @@ CPU is supporting 64bit intruction sets, vendors sell products running 32bit OS,
 - Once you have GRUB2 you can boot a 64bit OS  
 
 ## GRUB
-Build our TARGET
+* Build our TARGET:
 ```
-$ grub-mkimage -C xz -o grub -O i386-efi -p /usr/lib/grub/i386-efi/*.mod
-$ file 
+$ grub-mkimage -C xz -o grub2ia32.efi -O i386-efi -p /usr/lib/grub/i386-efi/*.mod
+$ file grub2ia32.efi
 grub2ia32.efi: PE32 executable (EFI application) Intel 80386 (stripped to external PDB), for MS Windows
 ```
-Move it to one HDD partition, in my case in C:\myefi
+* Move it to one HDD partition, in my case in C:\myefi  
+
+## Loading GRUB
+* Enter BIOS, lauch EFI shell
+* Execute GRUB, by entering full PATH
